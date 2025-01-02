@@ -1,0 +1,43 @@
+/* Footer container */
+.Footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 95%;
+  margin-top: auto;
+}
+
+/* Footer links styling */
+.Footer .Links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.Footer a {
+  color: inherit; /* Inherit the color from the parent container */
+  text-decoration: none; /* Remove underline from links */
+  margin: 0 10px; /* Space between icons */
+}
+
+.Footer a:hover,
+.Footer a:focus,
+.Footer a:active {
+  color: inherit; /* Keep color the same on hover, focus, or active state */
+}
+
+.Footer svg {
+  font-size: 2rem; /* Adjust the icon size */
+  transition: none; /* Prevent any transition effect */
+}
+
+/* Styling for the copyright info text */
+.Footer p {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 14px;
+}

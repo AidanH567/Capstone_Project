@@ -1,0 +1,29 @@
+.NavBar {
+  padding: 10px;
+  display: flex;
+  justify-content: center; /* Centers the nav items horizontally */
+  background-color: #333; /* Change as needed */
+  color: white; /* Adjust text color */
+  width: 99%;
+}
+
+.menu {
+  display: flex; /* Flexbox layout for list items */
+  list-style: none; /* Removes default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0 15px; /* Adds spacing between the nav items */
+}
+
+.menu a {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits the color from parent (theme.foreground) */
+  padding: 5px 10px; /* Adds padding inside each link */
+}
+
+.menu a:hover {
+  background-color: #444; /* Add a hover effect */
+}

@@ -1,0 +1,18 @@
+.TextBox {
+  position: absolute; /* Position it on top of the image */
+  top: 70%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to truly center the text box */
+  width: 25%;
+  background-color: rgba(255, 255, 255); /* Semi-transparent background */
+  padding: 20px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #333; /* Text color */
+  pointer-events: none; /* Prevent interaction with the text box */
+}
+
+.TextBox:hover {
+  pointer-events: auto; /* Allow interaction on hover */
+}

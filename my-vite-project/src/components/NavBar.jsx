@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import "../styles/Navbar.css";
 export default function NavBar() {
   return (
     <nav className="NavBar">

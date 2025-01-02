@@ -12,6 +12,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Set the body to use flexbox */
+  flex-direction: column; /* Stack content vertically */
+}
+
+body > * {
+  flex: 1 0 auto; /* Allow content to grow, but not shrink */
+}
 
 /* a {
   font-weight: 500;
