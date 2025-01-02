@@ -10,6 +10,9 @@ import QuestionsPage from "../pages/QuestionsPage";
 import ListeningPage from "../pages/ListeningPage";
 import CoursesPage from "../pages/CoursesPage";
 import MerchPage from "../pages/MerchPage";
+import LoginPage from "../pages/LoginPage";
+import WritePage from "../pages/WritePage";
+import RegisterPage from "../pages/RegisterPage";
 
 function AppRoutes(props) {
   return (
@@ -25,6 +28,9 @@ function AppRoutes(props) {
       <Route path="/listen" element={<ListeningPage {...props} />} />
       <Route path="/courses" element={<CoursesPage {...props} />} />
       <Route path="/merch" element={<MerchPage {...props} />} />
+      <Route path="/login" element={<LoginPage {...props} />} />
+      <Route path="/register" element={<RegisterPage {...props} />} />
+      <Route path="/write" element={<WritePage {...props} />} />
     </Routes>
   );
 }

@@ -38,6 +38,17 @@ export default function NavBar() {
         <li>
           <NavLink to="/merch">Merch</NavLink>
         </li>
+        <li>
+          <NavLink to="/login">Login</NavLink>
+        </li>
+        <li>
+          <NavLink to="/register">Register</NavLink>
+        </li>
+        <li>
+          <NavLink to="/write">Write</NavLink>
+        </li>
+        <span className="span">Aidan</span>
+        <span className="span">Logout</span>
       </ul>{" "}
     </nav>
   );
