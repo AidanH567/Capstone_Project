@@ -1,0 +1,47 @@
+.menu-menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.menu-menu h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.menu-menu .post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-menu .post img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-menu .post h2 {
+  font-size: 18px;
+  color: #555;
+}
+
+.menu-menu .post button {
+  width: fit-content;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: teal;
+  background-color: white;
+  border: 1px solid teal;
+  transition: all 0.3s ease;
+}
+
+.menu-menu .post button:hover {
+  border: 1px solid white;
+  background-color: #90ee90;
+  color: black;
+}

@@ -47,6 +47,9 @@ export default function NavBar() {
         <li>
           <NavLink to="/write">Write</NavLink>
         </li>
+        <li>
+          <NavLink to="/singleblog">Single Blog</NavLink>
+        </li>
         <span className="span">Aidan</span>
         <span className="span">Logout</span>
       </ul>{" "}

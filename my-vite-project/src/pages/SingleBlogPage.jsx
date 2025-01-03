@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
-import "../styles/BlogPage.css";
+import React, { useEffect, useState } from "react";
+import Edit from "../img/edit.png";
+import Delete from "../img/delete.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Menu from "../components/menu";
+// import axios from "axios";
+// import moment from "moment";
+import { useContext } from "react";
+// import { AuthContext } from "../context/authContext";
+// import DOMPurify from "dompurify";
+import "../styles/SingleBlogPage.css";
 
-export default function BlogPage() {
+const SingleBlogPage = () => {
   const posts = [
     {
       id: 1,
@@ -28,25 +37,32 @@ export default function BlogPage() {
       img: "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
   ];
-
   return (
-    <div className="blog-home">
-      <div className="blog-posts">
-        {posts.map((post) => (
-          <div className="blog-post" key={post.id}>
-            <div className="blog-img">
-              <img src={post.img} alt={post.title} />
-            </div>
-            <div className="blog-content">
-              <Link className="link" to={`/post/2`}>
-                <h1>{post.title}</h1>
-              </Link>
-              <p>{post.desc}</p>
-              <button>Read More</button>
-            </div>
+    <div className="single">
+      <div className="content">
+        <img
+          src="https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt=""
+        />
+        <div className="user">
+          <img src="https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+          <div className="info">
+            <span>John</span>
+            <p>Posted</p>
           </div>
-        ))}
+          <div className="edit">
+            <Link to={`/write?edit=2`}>
+              <img src={Edit} alt="" />
+            </Link>
+            <img src={Delete} alt="" />
+          </div>
+        </div>
+        <h1>Title</h1>
+        <p>Some TExt</p>
       </div>
+      <Menu />
     </div>
   );
-}
+};
+
+export default SingleBlogPage;
