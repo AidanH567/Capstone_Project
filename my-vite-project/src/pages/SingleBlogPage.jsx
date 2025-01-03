@@ -38,19 +38,19 @@ const SingleBlogPage = () => {
     },
   ];
   return (
-    <div className="single">
-      <div className="content">
+    <div className="singlepage-single">
+      <div className="singlepage-content">
         <img
           src="https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt=""
         />
-        <div className="user">
+        <div className="singlepage-user">
           <img src="https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
           <div className="info">
             <span>John</span>
             <p>Posted</p>
           </div>
-          <div className="edit">
+          <div className="singlepage-edit">
             <Link to={`/write?edit=2`}>
               <img src={Edit} alt="" />
             </Link>

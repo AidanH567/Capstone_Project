@@ -1,14 +1,18 @@
-.write {
+.add {
   margin-top: 20px;
   display: flex;
   gap: 20px;
 }
-.content {
+
+.add .write-content {
   flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.menu {
+.add .write-menu {
   flex: 2;
   display: flex;
-
+  flex-direction: column;
   gap: 20px;
 }

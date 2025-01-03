@@ -1,7 +1,5 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-import TextBox from "../components/TextBox";
-
 // import Login from "../components/Login";
 export default function AboutPage() {
   // Save in pages/AboutPage.jsx
