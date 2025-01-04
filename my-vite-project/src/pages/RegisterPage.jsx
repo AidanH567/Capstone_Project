@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function RegisterPage() {
@@ -9,16 +9,22 @@ export default function RegisterPage() {
     password: "",
   });
 
+  const [err, setError] = useState(null);
+
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth.register", inputs);
-      console.log(res);
+      // Change this line to match the backend route
+      await axios.post("/api/auth/register", inputs);
+      navigate("/login");
     } catch (err) {
+      setError(err.response.data);
       console.log(err);
     }
   };
@@ -48,7 +54,7 @@ export default function RegisterPage() {
           onChange={handleChange}
         />
         <button onClick={handleSubmit}>Register</button>
-
+        {err && <p>{err}</p>}
         <span>
           Do you have an account? <Link to="/login">Login</Link>
         </span>

@@ -13,6 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "draft-js": "^0.11.7",
     "install": "^0.13.0",
     "lodash": "^4.17.21",
