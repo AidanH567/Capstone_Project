@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/BlogPage.css";
 
 export default function BlogPage() {
   const posts = [

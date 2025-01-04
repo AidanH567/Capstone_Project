@@ -10,9 +10,75 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.write-content input {
+  padding: 10px;
+  border: 1px solid lightgrey;
+  width: 20%;
+}
+
 .add .write-menu {
   flex: 2;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.write-editor-container {
+  height: 300px;
+  overflow: scroll;
+}
+
+.write-editor {
+  height: 100%;
+  border: none;
+}
+
+.write-item {
+  padding: 10px;
+  border: 1px solid lightgrey;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: white;
+}
+
+.write-item h1 {
+  font-size: 20px;
+}
+
+.write-file {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.write-buttons button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.write-buttons .write-button-1 {
+  background-color: #6c757d;
+  cursor: pointer;
+  color: rgb(239, 106, 106);
+  background-color: black;
+  border: 1px solid rgb(239, 106, 106);
+  padding: 3px 5px;
+}
+
+.write-buttons .write-button-2 {
+  background-color: #6c757d;
+  cursor: pointer;
+  color: black;
+  background-color: rgb(239, 106, 106);
+  border: 1px solid black;
+  padding: 3px 5px;
+}
+.write-cat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: rgb(231, 94, 94);
 }
