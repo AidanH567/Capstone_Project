@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/authContext";
 
-export default function LoginPage() {
+function LoginPage() {
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -60,3 +60,4 @@ export default function LoginPage() {
     </div>
   );
 }
+export default LoginPage;

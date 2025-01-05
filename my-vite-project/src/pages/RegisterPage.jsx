@@ -21,7 +21,7 @@ export default function RegisterPage() {
     e.preventDefault();
     try {
       // Change this line to match the backend route
-      await axios.post("/api/auth/register", inputs);
+      await axios.post("/auth/register", inputs);
       navigate("/login");
     } catch (err) {
       setError(err.response.data);
