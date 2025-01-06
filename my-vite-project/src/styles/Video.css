@@ -1,0 +1,6 @@
+/* Scoped styles (e.g., Video.module.css) */
+.video-container .ratio {
+  /* Custom styles for the ratio class */
+  width: 100%;
+  height: auto;
+}

@@ -8,7 +8,7 @@ export const getPosts = (req, res) => {
   db.query(q, [req.query.cat], (err, data) => {
     if (err) return res.send(err);
 
-    return res.status(200).josn(data);
+    return res.status(200).json(data);
   });
 };
 export const getPost = (req, res) => {
