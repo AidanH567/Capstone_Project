@@ -8,13 +8,10 @@ export default function BlogPage() {
 
   const cat = useLocation().search;
 
-  console.log(location);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts${cat}`);
-        console.log(res.data);
+        const res = await axios.get(`http://localhost:8800/api/posts${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -58,7 +55,7 @@ export default function BlogPage() {
               <img src={post.img} alt={post.title} />
             </div>
             <div className="blog-content">
-              <Link className="link" to={`/post/2`}>
+              <Link className="link" to={`singleblog/post/2`}>
                 <h1>{post.title}</h1>
               </Link>
               <p>{post.desc}</p>

@@ -61,30 +61,34 @@
 //   );
 // }
 // export default LoginPage;
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/LoginPage.css";
+import { AuthContext } from "../context/authContext";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [inputs, setInputs] = useState({
+    username: "",
+    password: "",
+  });
   const [err, setError] = useState(null);
 
   const navigate = useNavigate();
 
+  const { login } = useContext(AuthContext);
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/api/auth/login", {
-        username: username,
-        password: password,
-      });
-
+      await login(inputs);
       navigate("/");
     } catch (err) {
-      setError(err.response?.data?.message || "An error occurred");
-      console.log(err);
+      setError(err.response.data);
     }
   };
 
@@ -97,14 +101,16 @@ export default function LoginPage() {
           type="text"
           placeholder="username"
           name="username"
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={handleChange}
+          // onChange={(e) => setUsername(e.target.value)}
         />
         <input
           required
           type="password"
           placeholder="password"
           name="password"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handleChange}
+          // onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleSubmit}>Login</button>
         {err && <p>{err}</p>}
@@ -115,3 +121,37 @@ export default function LoginPage() {
     </div>
   );
 }
+
+// const [username, setUsername] = useState("");
+// const [password, setPassword] = useState("");
+// const [err, setError] = useState(null);
+
+// const { login } = useContext(AuthContext);
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       // Change this line to match the backend route
+//       // await axios.post("/api/auth/login", inputs);
+//       await login(inputs);
+//       navigate("/");
+//     } catch (err) {
+//       setError(err.response.data);
+//       console.log(err);
+//     }
+//   };
+
+// const navigate = useNavigate();
+
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   try {
+//     await login({
+//       username: username,
+//       password: password,
+//     }).then(navigate("/"));
+//   } catch (err) {
+//     setError(err.response?.data?.message || "An error occurred");
+//     console.log(err);
+//   }
+// };
