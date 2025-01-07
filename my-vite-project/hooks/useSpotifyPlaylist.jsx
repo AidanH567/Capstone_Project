@@ -19,7 +19,7 @@ const useSpotifyPlaylist = (playlistId) => {
 
       try {
         const result = await fetch(
-          `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+          `https://api.spotify.com/v1/playlists/6m7772eFYI3DmxZXVD1tL3/tracks`,
           {
             method: "GET",
             headers: { Authorization: `Bearer ${accessToken}` },
@@ -31,6 +31,7 @@ const useSpotifyPlaylist = (playlistId) => {
         }
 
         const data = await result.json();
+        console.log("Fetched Playlist Data:", data);
         const tenItems = data.items.slice(0, 10).map((item) => item.track);
         setSongs(tenItems); // Update songs state
         setLoading(false);

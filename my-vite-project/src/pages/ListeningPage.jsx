@@ -13,7 +13,7 @@ const ListeningPage = () => {
 
   return (
     <div>
-      <h1>Spotify Playlist</h1>
+      <h1>Listen to my favourite songs</h1>
       {/* Pass the fetched songs to the SpotifyPlaylist component */}
       <SpotifyPlaylist songs={songs} />
     </div>
