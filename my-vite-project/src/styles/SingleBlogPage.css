@@ -1,109 +1,9 @@
-/* .single {
+.singlepage-single {
   display: flex;
   gap: 50px;
   margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
-}
-
-.single .content {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.single .content img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.single .content .user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-}
-
-.single .content .user img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.single .content .user span {
-  font-weight: bold;
-}
-
-.single .content .edit {
-  display: flex;
-  gap: 5px;
-}
-
-.single .content .edit img {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.single .content h1 {
-  font-size: 42px;
-  color: #f1f1f1;
-}
-
-.single .content p {
-  text-align: justify;
-  line-height: 30px;
-}
-
-.single .menu {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.single .menu h1 {
-  font-size: 20px;
-  color: #555;
-}
-
-.single .menu .post {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.single .menu .post img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.single .menu .post h2 {
-  color: #de3333;
-}
-
-.single .menu .post button {
-  width: max-content;
-  padding: 7.5px 15px;
-  border: none;
-  cursor: pointer;
-  color: rgb(232, 84, 62);
-  background-color: white;
-  border: 1px solid rgb(213, 116, 26);
-}
-
-.single .menu .post button:hover {
-  border: 1px solid white;
-  background-color: rgb(238, 167, 144);
-  color: black;
-} */
-.singlepage-single {
-  display: flex;
-  gap: 50px;
 }
 
 .singlepage-content {
@@ -119,35 +19,36 @@
   object-fit: cover;
 }
 
-.singlepage-content .singlepage-user {
+.singlepage-user {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 14px;
 }
 
-.singlepage-content .singlepage-user img {
+.singlepage-user img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.singlepage-content .singlepage-user .info {
-  display: flex;
-  flex-direction: column;
-}
-
-.singlepage-content .singlepage-user .info span {
+.singlepage-user span {
   font-weight: bold;
 }
 
-.singlepage-content .singlepage-edit {
+.singlepage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.singlepage-edit {
   display: flex;
   gap: 5px;
 }
 
-.singlepage-content .singlepage-edit img {
+.singlepage-edit img {
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -155,7 +56,7 @@
 
 .singlepage-content h1 {
   font-size: 42px;
-  color: #333;
+  color: #f1f1f1;
 }
 
 .singlepage-content p {
@@ -163,46 +64,46 @@
   line-height: 30px;
 }
 
-.menu-div {
+.singlepage-menu {
   flex: 2;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-.menu-div h1 {
+.singlepage-menu h1 {
   font-size: 20px;
   color: #555;
 }
 
-.menu-div .menu-post {
+.singlepage-menu .post {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.menu-div .menu-post img {
+.singlepage-menu .post img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.menu-div .menu-post h2 {
-  color: #555;
+.singlepage-menu .post h2 {
+  color: #de3333;
 }
 
-.menu-div .menu-post button {
+.singlepage-menu .post button {
   width: max-content;
   padding: 7.5px 15px;
   border: none;
   cursor: pointer;
-  color: teal;
+  color: rgb(232, 84, 62);
   background-color: white;
-  border: 1px solid teal;
+  border: 1px solid rgb(213, 116, 26);
 }
 
-.menu-div .menu-post button:hover {
+.singlepage-menu .post button:hover {
   border: 1px solid white;
-  background-color: #90ee90; /* Replace with your desired color */
+  background-color: rgb(238, 167, 144);
   color: black;
 }

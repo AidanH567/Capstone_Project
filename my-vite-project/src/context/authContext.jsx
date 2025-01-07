@@ -12,7 +12,8 @@ export const AuthContextProvider = ({ children }) => {
     console.log("Login inputs:", inputs);
     const res = await axios.post(
       "http://localhost:8800/api/auth/login",
-      inputs
+      inputs,
+      { withCredentials: true } // Add this line to send cookies with the request
     );
     setCurrentUser(res.data);
   };

@@ -32,7 +32,7 @@ function AppRoutes(props) {
       <Route path="/login" element={<LoginPage {...props} />} />
       <Route path="/register" element={<RegisterPage {...props} />} />
       <Route path="/write" element={<WritePage {...props} />} />
-      <Route path="/singleblog" element={<SingleBlogPage {...props} />} />
+      <Route path="/post/:id" element={<SingleBlogPage {...props} />} />
     </Routes>
   );
 }

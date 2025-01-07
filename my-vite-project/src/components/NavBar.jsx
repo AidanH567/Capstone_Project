@@ -8,25 +8,6 @@ export default function NavBar() {
   return (
     <nav className="NavBar">
       <ul className="menu">
-        <Link className="link" to="blog/?cat=art">
-          <h6>ART</h6>
-        </Link>
-        <Link className="link" to="blog/?cat=science">
-          <h6>SCIENCE</h6>
-        </Link>
-        <Link className="link" to="blog/?cat=technology">
-          <h6>TECHNOLOGY</h6>
-        </Link>
-        <Link className="link" to="blog/?cat=cinema">
-          <h6>CINEMA</h6>
-        </Link>
-        <Link className="link" to="blog/?cat=design">
-          <h6>DESIGN</h6>
-        </Link>
-        <Link className="link" to="blog/?cat=food">
-          <h6>FOOD</h6>
-        </Link>
-
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -49,34 +30,19 @@ export default function NavBar() {
           <NavLink to="/blog">Blog</NavLink>
         </li>
         <li>
-          <NavLink to="/questions">Questions</NavLink>
-        </li>
-        <li>
           <NavLink to="/listen">Listening To</NavLink>
         </li>
         <li>
           <NavLink to="/courses">Courses</NavLink>
         </li>
-        <li>
-          <NavLink to="/merch">Merch</NavLink>
-        </li>
-        {/* <li>
-          {currentUser ? (
-            <NavLink to="/profile">{currentUser.username}</NavLink>
-          ) : (
-            <NavLink to="/login">Login</NavLink>
-          )}
-        </li> */}
-        <li></li>
+
         <li>
           <NavLink to="/register">Register</NavLink>
         </li>
         <li>
           <NavLink to="/write">Write</NavLink>
         </li>
-        <li>
-          <NavLink to="/singleblog">Single Blog</NavLink>
-        </li>
+
         <span className="span">{currentUser?.username}</span>
 
         {currentUser ? (

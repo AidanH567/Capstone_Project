@@ -46,6 +46,8 @@ export const login = (req, res) => {
     res
       .cookie("access_token", token, {
         httpOnly: true,
+        secure: process.env.NODE_ENV === "production", // Ensures secure cookie in production
+        sameSite: "None", // Required for cross-origin cookies
       })
       .status(200)
       .json(other);
