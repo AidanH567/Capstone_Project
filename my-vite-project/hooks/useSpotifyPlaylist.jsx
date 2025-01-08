@@ -32,7 +32,7 @@ const useSpotifyPlaylist = (playlistId) => {
 
       const data = await result.json();
       const newSongs = data.items.map((item) => item.track);
-      setSongs((prevSongs) => [...prevSongs, ...newSongs]); // Append new songs
+      setSongs(newSongs); // Replace the song list
     } catch (error) {
       setError(`Error fetching playlist tracks: ${error.message}`);
     } finally {
@@ -40,22 +40,19 @@ const useSpotifyPlaylist = (playlistId) => {
     }
   };
 
-  // Fetch the initial set of songs
+  // Fetch songs whenever the offset changes
   useEffect(() => {
     if (!authLoading && !authError) {
       fetchPlaylistTracks(offset);
     }
   }, [accessToken, playlistId, authLoading, authError, offset]);
 
-  // Return the songs, loading state, error, and fetch function
   return {
     songs,
     loading,
     error,
-    fetchMore: () => setOffset((prev) => prev + 14),
+    fetchNext: () => setOffset((prevOffset) => prevOffset + 14),
   };
 };
 
 export default useSpotifyPlaylist;
-
-// 6m7772eFYI3DmxZXVD1tL3

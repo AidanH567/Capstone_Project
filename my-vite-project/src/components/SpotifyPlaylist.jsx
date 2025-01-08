@@ -3,7 +3,7 @@ import useSpotifyPlaylist from "../../hooks/useSpotifyPlaylist";
 import "../styles/SpotifyPlaylist.css";
 
 const SpotifyPlaylist = ({ playlistId }) => {
-  const { songs, loading, error, fetchMore } = useSpotifyPlaylist(playlistId);
+  const { songs, loading, error, fetchNext } = useSpotifyPlaylist(playlistId);
 
   if (error) {
     return <p>{error}</p>;
@@ -38,8 +38,8 @@ const SpotifyPlaylist = ({ playlistId }) => {
       </ol>
       {loading && <p>Loading...</p>}
       {!loading && (
-        <button onClick={fetchMore} className="load-more-button">
-          Load More
+        <button onClick={fetchNext} className="load-more-button">
+          Next Songs
         </button>
       )}
     </div>

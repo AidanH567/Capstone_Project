@@ -113,7 +113,7 @@ export default function LoginPage() {
           // onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleSubmit}>Login</button>
-        {err && <p>{err}</p>}
+        {err && <p style={{ color: "red" }}>{err}</p>}
         <span>
           Don't have an account? <Link to="/register">Register</Link>
         </span>
