@@ -1,22 +1,12 @@
 import React from "react";
-import useSpotifyPlaylist from "../../hooks/useSpotifyPlaylist"; // Import the custom hook
+import useSpotifyPlaylist from "../../hooks/useSpotifyPlaylist";
 import "../styles/SpotifyPlaylist.css";
 
 const SpotifyPlaylist = ({ playlistId }) => {
-  // Call the custom hook to get the playlist data
-  const { songs, loading, error } = useSpotifyPlaylist(playlistId);
-
-  // Loading and error states
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  const { songs, loading, error, fetchMore } = useSpotifyPlaylist(playlistId);
 
   if (error) {
     return <p>{error}</p>;
-  }
-
-  if (songs.length === 0) {
-    return <p>No songs available</p>;
   }
 
   return (
@@ -46,6 +36,12 @@ const SpotifyPlaylist = ({ playlistId }) => {
           </div>
         ))}
       </ol>
+      {loading && <p>Loading...</p>}
+      {!loading && (
+        <button onClick={fetchMore} className="load-more-button">
+          Load More
+        </button>
+      )}
     </div>
   );
 };

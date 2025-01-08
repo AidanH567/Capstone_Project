@@ -1,54 +1,61 @@
 import { useState, useEffect } from "react";
-import useSpotifyAuth from "./useSpotifyAuth"; // Import the auth hook
+import useSpotifyAuth from "./useSpotifyAuth";
 
 const useSpotifyPlaylist = (playlistId) => {
   const [songs, setSongs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [offset, setOffset] = useState(0); // Track the offset for pagination
 
-  // Use the useSpotifyAuth hook to get the access token
   const {
     accessToken,
     loading: authLoading,
     error: authError,
   } = useSpotifyAuth();
 
-  useEffect(() => {
-    const fetchPlaylistTracks = async () => {
-      if (!accessToken) return; // Don't fetch if no access token
+  const fetchPlaylistTracks = async (newOffset = 0) => {
+    if (!accessToken) return;
 
-      try {
-        const result = await fetch(
-          `https://api.spotify.com/v1/playlists/6m7772eFYI3DmxZXVD1tL3/tracks`,
-          {
-            method: "GET",
-            headers: { Authorization: `Bearer ${accessToken}` },
-          }
-        );
-
-        if (!result.ok) {
-          throw new Error(`Failed to fetch playlist tracks: ${result.status}`);
+    setLoading(true);
+    try {
+      const result = await fetch(
+        `https://api.spotify.com/v1/playlists/5oP9jFmcfNJRMLfIY1sZwV/tracks?offset=${newOffset}&limit=14`,
+        {
+          method: "GET",
+          headers: { Authorization: `Bearer ${accessToken}` },
         }
+      );
 
-        const data = await result.json();
-        console.log("Fetched Playlist Data:", data);
-        const tenItems = data.items.slice(0, 10).map((item) => item.track);
-        setSongs(tenItems); // Update songs state
-        setLoading(false);
-      } catch (error) {
-        setError(`Error fetching playlist tracks: ${error.message}`);
-        setLoading(false);
+      if (!result.ok) {
+        throw new Error(`Failed to fetch playlist tracks: ${result.status}`);
       }
-    };
 
-    // Only fetch the playlist if the access token is available and it's not still loading
-    if (!authLoading && !authError) {
-      fetchPlaylistTracks();
+      const data = await result.json();
+      const newSongs = data.items.map((item) => item.track);
+      setSongs((prevSongs) => [...prevSongs, ...newSongs]); // Append new songs
+    } catch (error) {
+      setError(`Error fetching playlist tracks: ${error.message}`);
+    } finally {
+      setLoading(false);
     }
-  }, [accessToken, playlistId, authLoading, authError]); // Depend on accessToken and playlistId
+  };
 
-  // Return the loading state, songs, and any error
-  return { songs, loading: authLoading || loading, error: authError || error };
+  // Fetch the initial set of songs
+  useEffect(() => {
+    if (!authLoading && !authError) {
+      fetchPlaylistTracks(offset);
+    }
+  }, [accessToken, playlistId, authLoading, authError, offset]);
+
+  // Return the songs, loading state, error, and fetch function
+  return {
+    songs,
+    loading,
+    error,
+    fetchMore: () => setOffset((prev) => prev + 14),
+  };
 };
 
 export default useSpotifyPlaylist;
+
+// 6m7772eFYI3DmxZXVD1tL3
