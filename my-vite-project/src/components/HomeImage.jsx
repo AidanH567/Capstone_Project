@@ -5,8 +5,8 @@ export default function HomeImage() {
   return (
     <motion.div
       className="homeimage-container"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 4 }}
       exit={{ opacity: 0 }}
     >
       <img

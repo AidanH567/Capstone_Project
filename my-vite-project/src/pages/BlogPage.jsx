@@ -26,7 +26,7 @@ export default function BlogPage() {
     <motion.div
       className="blog-home"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 2 }}
       exit={{ opacity: 0 }}
     >
       <BlogMenu />
