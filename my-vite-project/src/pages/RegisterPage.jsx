@@ -56,7 +56,7 @@ export default function RegisterPage() {
           // onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleSubmit}>Register</button>
-        {err && <p>{err}</p>}
+        {err && <p style={{ color: "red" }}>{err}</p>}
         <span>
           Do you have an account? <Link to="/login">Login</Link>
         </span>

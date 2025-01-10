@@ -65,7 +65,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/LoginPage.css";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function LoginPage() {
   const [inputs, setInputs] = useState({

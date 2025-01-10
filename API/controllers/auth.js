@@ -46,8 +46,10 @@ export const login = (req, res) => {
     res
       .cookie("access_token", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production", // Ensures secure cookie in production
+        secure: true,
+        // secure: process.env.NODE_ENV === "production", // Ensures secure cookie in production
         sameSite: "None", // Required for cross-origin cookies
+        path: "/",
       })
       .status(200)
       .json(other);
@@ -56,8 +58,10 @@ export const login = (req, res) => {
 export const logout = (req, res) => {
   res
     .clearCookie("access_token", {
+      httpOnly: true,
       sameSite: "none",
       secure: true,
+      path: "/",
     })
     .status(200)
     .json("User Has Been Logged out");

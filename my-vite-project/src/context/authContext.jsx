@@ -33,7 +33,6 @@ export const AuthContextProvider = ({ children }) => {
     </AuthContext.Provider> //might need to check over this again
   );
 };
-
 // const login = async (inputs) => {
 //   await axios
 //     .post("http://localhost:8800/api/auth/login", inputs)

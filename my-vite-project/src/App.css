@@ -1,15 +1,15 @@
 .HomePage {
-  margin-top: 50px;
+  margin-top: 25px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  position: relative; /* Make the parent container relative for absolute positioning */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  position: relative; /* Keep relative positioning for potential absolute elements */
 }
 
 .SelfImage {
-  max-width: 75%;
-  max-height: 75%;
+  max-width: 75%; /* Limit image width */
+  max-height: 75%; /* Limit image height */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

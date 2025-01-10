@@ -1,13 +1,20 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../context/AuthContext";
+import Logo from "../img/Logo.webp";
 export default function NavBar() {
   const { currentUser, logout } = useContext(AuthContext);
 
   return (
     <nav className="NavBar">
+      <div className="logo">
+        <Link to="/">
+          <img src={Logo} alt="" />
+        </Link>
+      </div>
       <ul className="menu">
+        <div className="navbar-links"></div>
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
@@ -24,18 +31,16 @@ export default function NavBar() {
           <NavLink to="/music">Music</NavLink>
         </li>
         <li>
-          <NavLink to="/gigs">Gigs</NavLink>
-        </li>
-        <li>
           <NavLink to="/blog">Blog</NavLink>
         </li>
         <li>
           <NavLink to="/listen">Listening To</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/courses">Courses</NavLink>
-        </li>
-
+        </li> */}
+      </ul>
+      <ul>
         <li>
           <NavLink to="/register">Register</NavLink>
         </li>
@@ -52,7 +57,7 @@ export default function NavBar() {
             Login
           </Link>
         )}
-      </ul>{" "}
+      </ul>
     </nav>
   );
 }

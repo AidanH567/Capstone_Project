@@ -1,0 +1,48 @@
+/* Wrapper for flexbox layout */
+.video-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping in case of small screens */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+/* Video container with iframe */
+.video-container {
+  width: 50%;
+  height: 600px; /* Increased height of the video */
+  margin-right: 20px;
+  position: relative; /* Required for positioning the hover effect */
+}
+
+/* Style for iframe inside the video container */
+.video-div iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition for scaling */
+}
+
+/* Hover effect for scaling the video */
+.video-div iframe:hover {
+  transform: scale(1.1); /* Scale the iframe to 110% of its size */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Text container for heading and paragraph */
+.text-container {
+  width: 45%; /* Adjust width for the text section */
+  margin-top: 20px;
+}
+
+/* Style for the heading and paragraph */
+.text-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 1rem;
+  color: #666;
+}

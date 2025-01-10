@@ -6,7 +6,7 @@ import Menu from "../components/menu";
 import axios from "axios";
 import { useContext } from "react";
 import moment from "moment";
-import { AuthContext } from "../context/authContext";
+import { AuthContext } from "../context/AuthContext";
 import "../styles/SingleBlogPage.css";
 
 const SingleBlogPage = () => {
@@ -79,7 +79,7 @@ const SingleBlogPage = () => {
           </div>
 
           {currentUser.username === post.username && (
-            <div className="singlepage-edit">
+            <div className="singlepage-edit" state={post}>
               <Link to={`/write?edit=2`}>
                 <img src={Edit} alt="" />
               </Link>
@@ -90,7 +90,7 @@ const SingleBlogPage = () => {
         <h1>{post.title}</h1>
         {post.desc}
       </div>
-      <Menu />
+      <Menu cat={post.cat} />
     </div>
   );
 };
