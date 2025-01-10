@@ -71,7 +71,6 @@ function Footer() {
           <FaAmazon />
         </a>
       </div>
-      <p>This will have copyright info</p>
     </div>
   );
 }

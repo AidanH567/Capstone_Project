@@ -1,0 +1,34 @@
+.about-page-layout {
+  width: 100%;
+  height: 2000px;
+}
+.about-page-container {
+  height: 100%;
+  display: flex;
+  margin: 20% 20%;
+  margin-top: 10px;
+}
+.about-page-container img {
+  height: 80%;
+  width: 500px;
+}
+.about-page-img {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.about-page-info {
+  width: 50%;
+}
+.about-page-info p {
+  width: 60%;
+}
+.about-page-layout h1 {
+  justify-content: center;
+}
+.about-page-layout-h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+}

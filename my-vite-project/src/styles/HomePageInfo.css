@@ -1,0 +1,100 @@
+/* First container: Image on the left, text on the right */
+.homepageinfo-container {
+  width: 100%;
+}
+
+.homepageinfo-description p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  align-items: center;
+  text-align: center; /* Ensures the text is centered */
+}
+.info-container-1 {
+  display: flex;
+  margin: 0 20%; /* Margin shorthand for left and right */
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns the items to the start for consistency */
+  margin-bottom: 100px;
+}
+
+.info-container-1 img {
+  width: 45%;
+  max-width: 100%; /* Ensures responsiveness */
+  margin-left: 20px;
+}
+
+.info-text-container-1 {
+  padding-top: 40px; /* Reduced padding for better layout */
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* Align text to the start */
+}
+
+.info-container-1 p {
+  width: 100%; /* Ensures the paragraph takes up available space */
+  max-width: 400px; /* Maximum width for the paragraph */
+  margin-bottom: 20px; /* Adds space below the paragraph */
+}
+
+/* Second container: Image on the right, text on the left */
+.info-container-2 {
+  display: flex;
+  margin: 0 20%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 100px;
+}
+
+.info-container-2 img {
+  width: 45%;
+  max-width: 100%; /* Ensures responsiveness */
+  margin-right: 8px;
+}
+
+.info-text-container-2 {
+  padding-top: 40px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 80px;
+}
+
+.info-container-2 p {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 15px 30px; /* Increases padding for bigger button size */
+  background-color: white; /* Sets button background to white */
+  color: #ea6557; /* Sets text color to blue */
+  border: 2px solid #ea6557; /* Adds a blue border */
+  border-radius: 0; /* Removes the border radius to make the corners square */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Align the first button (from .info-text-container-1) to the left */
+.info-text-container-1 button {
+  align-self: flex-start; /* Aligns the first button to the left */
+}
+
+/* Align the second button (from .info-text-container-2) to the right */
+.info-text-container-2 button {
+  align-self: flex-end; /* Aligns the second button to the right */
+}
+
+/* Hover effect: change background and text color */
+button:hover {
+  background-color: #ea6557; /* Changes background color to blue */
+  color: white; /* Changes text color to white */
+  border-color: #ea6557; /* Darkens the border color */
+}

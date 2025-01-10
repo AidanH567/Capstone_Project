@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #222;
+  background-color: #111111;
   color: white;
   width: 100%; /* Ensure it spans the full width of the viewport */
   max-width: 100%; /* Prevent overflow */

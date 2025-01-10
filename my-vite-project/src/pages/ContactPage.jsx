@@ -1,9 +1,15 @@
 import Contact from "../components/Contact";
+import { motion } from "motion/react";
 
 export default function ContactPage() {
   // Save in pages/AboutPage.jsx
   return (
-    <div className="About">
+    <motion.div
+      className="About"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <h1
         style={{
           display: "flex",
@@ -16,6 +22,6 @@ export default function ContactPage() {
         Contact Aidan
       </h1>
       <Contact />
-    </div>
+    </motion.div>
   );
 }

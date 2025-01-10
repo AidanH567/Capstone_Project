@@ -3,6 +3,7 @@ import "../styles/BlogPage.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogMenu from "../components/blogMenu";
+import { motion } from "motion/react";
 
 export default function BlogPage() {
   const [posts, setPosts] = useState([]);
@@ -22,7 +23,12 @@ export default function BlogPage() {
   }, [cat]);
 
   return (
-    <div className="blog-home">
+    <motion.div
+      className="blog-home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <BlogMenu />
       <div className="blog-posts">
         {posts.map((post) => (
@@ -40,7 +46,7 @@ export default function BlogPage() {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
