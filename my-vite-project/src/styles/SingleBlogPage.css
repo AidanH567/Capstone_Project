@@ -1,51 +1,57 @@
-.singlepage-single {
+.singlepage-container {
   display: flex;
-  gap: 50px;
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
+  justify-content: center;
+  padding: 5%;
+  background-color: #8f8c8c;
+  color: #333;
+}
+
+.singlepage-main {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .singlepage-content {
-  flex: 5;
+  flex: 3;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .singlepage-content img {
   width: 100%;
-  height: 300px;
+  height: auto;
+  border-radius: 8px;
   object-fit: cover;
+  max-width: 800px; /* Set a maximum width */
+  max-height: 500px; /* Set a maximum height */
 }
 
 .singlepage-user {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .singlepage-user img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  object-fit: cover;
-}
-
-.singlepage-user span {
-  font-weight: bold;
 }
 
 .singlepage-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  font-size: 14px;
 }
 
 .singlepage-edit {
+  margin-left: auto;
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 
 .singlepage-edit img {
@@ -54,56 +60,57 @@
   cursor: pointer;
 }
 
-.singlepage-content h1 {
-  font-size: 42px;
-  color: #f1f1f1;
+.singlepage-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.singlepage-content p {
-  text-align: justify;
-  line-height: 30px;
+.singlepage-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
 }
 
-.singlepage-menu {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+.menu-div {
+  flex: 1;
 }
 
-.singlepage-menu h1 {
+.menu-div h1 {
   font-size: 20px;
   color: #555;
 }
 
-.singlepage-menu .post {
+.menu-post {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.singlepage-menu .post img {
+.menu-post img {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
+  max-width: 300px; /* Limit menu post image size */
+  max-height: 200px;
 }
 
-.singlepage-menu .post h2 {
-  color: #de3333;
+.menu-post h2 {
+  color: #555;
 }
 
-.singlepage-menu .post button {
+.menu-post button {
   width: max-content;
   padding: 7.5px 15px;
   border: none;
   cursor: pointer;
-  color: rgb(232, 84, 62);
+  color: teal;
   background-color: white;
-  border: 1px solid rgb(213, 116, 26);
+  border: 1px solid teal;
 }
 
-.singlepage-menu .post button:hover {
+.menu-post button:hover {
   border: 1px solid white;
-  background-color: rgb(238, 167, 144);
+  background-color: lightgreen;
   color: black;
 }

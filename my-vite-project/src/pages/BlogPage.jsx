@@ -34,14 +34,16 @@ export default function BlogPage() {
         {posts.map((post) => (
           <div className="blog-post" key={post.id}>
             <div className="blog-img">
-              <img src={post.img} alt={post.title} />
+              <img src={`../upload/${post.img}`} alt={post.title} />
             </div>
             <div className="blog-content">
               <Link className="link" to={`/post/${post.id}`}>
                 <h1>{post.title}</h1>
               </Link>
               <p>{post.desc}</p>
-              <button>Read More</button>
+              <Link className="link" to={`/post/${post.id}`}>
+                <button>Read More</button>
+              </Link>
             </div>
           </div>
         ))}

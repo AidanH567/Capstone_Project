@@ -1,69 +1,111 @@
 .blog-home .blog-posts {
-  margin-top: 50px;
+  margin: 50px 20%; /* Keeps 20% margin on sides */
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 80px; /* Slightly increased gap for better spacing */
 }
 
 .blog-home .blog-posts .blog-post {
   display: flex;
-  gap: 100px;
+  align-items: center;
+  gap: 50px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.blog-home .blog-posts .blog-post:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
 }
 
 .blog-home .blog-posts .blog-post:nth-child(2n + 1) {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse; /* Alternate layout */
 }
 
 .blog-home .blog-posts .blog-post .blog-img {
-  flex: 2;
+  flex: 1.5;
   position: relative;
-}
-
-.blog-home .blog-posts .blog-post .blog-img::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #90ee90; /* Replace with your desired color */
-  position: absolute;
-  top: 20px;
-  left: -20px;
-  z-index: -1;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .blog-home .blog-posts .blog-post .blog-img img {
   width: 100%;
-  max-height: 400px;
+  height: 250px; /* Increased height for longer posts */
   object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 8px;
+}
+
+.blog-home .blog-posts .blog-post .blog-img:hover img {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
 }
 
 .blog-home .blog-posts .blog-post .blog-content {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
 }
 
 .blog-home .blog-posts .blog-post .blog-content h1 {
-  font-size: 48px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white; /* Updated to white text */
+  text-decoration: none; /* Removes underline on title link */
+}
+
+.blog-home .blog-posts .blog-post .blog-content h1 a {
+  text-decoration: none; /* Ensures links in the title are not underlined */
+  color: inherit; /* Inherits white color */
+}
+
+.blog-home .blog-posts .blog-post .blog-content h1 a:hover {
+  color: #90ee90; /* Subtle hover effect for title */
 }
 
 .blog-home .blog-posts .blog-post .blog-content p {
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: white; /* Updated to white text */
 }
 
 .blog-home .blog-posts .blog-post .blog-content button {
-  width: max-content;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  background-color: white;
+  width: fit-content;
+  padding: 8px 16px;
   border: 1px solid teal;
+  border-radius: 4px;
+  background-color: transparent;
   color: teal;
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .blog-home .blog-posts .blog-post .blog-content button:hover {
-  border: 1px solid white;
-  background-color: #90ee90; /* Replace with your desired color */
-  color: black;
+  background-color: teal;
+  color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .blog-home .blog-posts {
+    margin: 20px;
+  }
+
+  .blog-home .blog-posts .blog-post {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-home .blog-posts .blog-post .blog-img img {
+    height: 200px; /* Adjusted height for smaller screens */
+  }
+
+  .blog-home .blog-posts .blog-post .blog-content h1 {
+    font-size: 20px;
+  }
+
+  .blog-home .blog-posts .blog-post .blog-content p {
+    font-size: 12px;
+  }
 }

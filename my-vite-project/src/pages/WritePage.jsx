@@ -107,67 +107,68 @@ export default function WritePage() {
           <div className="write-cat">
             <input
               type="radio"
-              checked={cat === "art"}
+              checked={cat === "guitar"}
               name="cat"
-              value="art"
-              id="art"
+              value="guitar"
+              id="guitar"
+              onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="art">ART</label>
+            <label htmlFor="guitar">Guitar</label>
           </div>
           <div className="write-cat">
             <input
               type="radio"
-              checked={cat === "science"}
+              checked={cat === "gear"}
               name="cat"
-              value="science"
-              id="science"
+              value="gear"
+              id="gear"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="science">Science</label>
+            <label htmlFor="gear">Gear</label>
           </div>
           <div className="write-cat">
             <input
               type="radio"
-              checked={cat === "technology"}
+              checked={cat === "questions"}
               name="cat"
-              value="technology"
-              id="technology"
+              value="questions"
+              id="questions"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="technology">Technology</label>
+            <label htmlFor="questions">Technology</label>
           </div>
           <div className="write-cat">
             <input
               type="radio"
-              checked={cat === "cinema"}
+              checked={cat === "gigs"}
               name="cat"
-              value="cinema"
-              id="cinema"
+              value="gigs"
+              id="gigs"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="cinema">Cinema</label>
+            <label htmlFor="gigs">Gigs</label>
           </div>
           <div className="write-cat">
             <input
               type="radio"
-              checked={cat === "design"}
+              checked={cat === "music"}
               name="cat"
-              value="design"
-              id="design"
+              value="music"
+              id="music"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="design">Design</label>
+            <label htmlFor="music">Music</label>
           </div>
           <div className="write-cat">
             <input
               type="radio"
-              checked={cat === "food"}
+              checked={cat === "history"}
               name="cat"
-              value="food"
-              id="food"
+              value="history"
+              id="history"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="food">Food</label>
+            <label htmlFor="history">Histroy</label>
           </div>
         </div>
       </div>

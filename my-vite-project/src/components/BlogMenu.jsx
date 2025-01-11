@@ -3,23 +3,23 @@ import "../styles/TextBox.css";
 function BlogMenu() {
   return (
     <div className="menu">
-      <Link className="link" to="?cat=art">
-        <h6>ART</h6>
+      <Link className="link" to="?cat=guitar">
+        <h6>Guitar</h6>
       </Link>
-      <Link className="link" to="?cat=science">
-        <h6>SCIENCE</h6>
+      <Link className="link" to="?cat=gear">
+        <h6>Gear</h6>
       </Link>
-      <Link className="link" to="?cat=technology">
-        <h6>TECHNOLOGY</h6>
+      <Link className="link" to="?cat=questions">
+        <h6>Questions</h6>
       </Link>
-      <Link className="link" to="?cat=cinema">
-        <h6>CINEMA</h6>
+      <Link className="link" to="?cat=gigs">
+        <h6>Gigs</h6>
       </Link>
-      <Link className="link" to="/?cat=design">
-        <h6>DESIGN</h6>
+      <Link className="link" to="?cat=music">
+        <h6>Music</h6>
       </Link>
-      <Link className="link" to="?cat=food">
-        <h6>FOOD</h6>
+      <Link className="link" to="?cat=history">
+        <h6>History</h6>
       </Link>
     </div>
   );

@@ -5,13 +5,14 @@ import userRoutes from "./routes/users.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import multer from "multer";
+// import "../my-vite-project/upload/";
 
 const app = express();
 // const corsOptions = { origin: "http://localhost:5173" };
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./upload/");
+    cb(null, "../my-vite-project/upload/");
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
