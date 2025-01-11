@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #111111;
-  color: white;
+  color: #ffffff;
   width: 100%; /* Ensure it spans the full width of the viewport */
   max-width: 100%; /* Prevent overflow */
   box-sizing: border-box; /* Include padding and border in width calculations */
