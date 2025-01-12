@@ -31,7 +31,7 @@ export default function BlogPage() {
     >
       <BlogMenu />
       <div className="blog-posts">
-        {posts.map((post) => (
+        {[...posts].reverse().map((post) => (
           <div className="blog-post" key={post.id}>
             <div className="blog-img">
               <img src={`../upload/${post.img}`} alt={post.title} />
