@@ -3,7 +3,7 @@ import "../styles/WritePage.css";
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
 
 export default function WritePage() {
@@ -13,6 +13,7 @@ export default function WritePage() {
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState(state?.cat || "");
   // Save in pages/AboutPage.jsx
+  const navigate = useNavigate();
 
   const upload = async () => {
     try {
@@ -32,6 +33,10 @@ export default function WritePage() {
   const handleClick = async (e) => {
     e.preventDefault();
     const imgUrl = await upload();
+    console.log(
+      "Formatted Date: ",
+      moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
+    );
 
     try {
       state
@@ -52,7 +57,7 @@ export default function WritePage() {
             },
             { withCredentials: true }
           );
-      navigate("/");
+      navigate("/blog");
     } catch (err) {
       console.log(err);
     }

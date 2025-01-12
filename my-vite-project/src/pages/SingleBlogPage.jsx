@@ -8,6 +8,7 @@ import { useContext } from "react";
 import moment from "moment";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/SingleBlogPage.css";
+import { motion } from "motion/react";
 
 const SingleBlogPage = () => {
   const [post, setPost] = useState({});
@@ -42,7 +43,12 @@ const SingleBlogPage = () => {
   };
 
   return (
-    <div className="singlepage-container">
+    <motion.div
+      className="singlepage-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 2 }}
+      exit={{ opacity: 0 }}
+    >
       <div className="singlepage-main">
         <div className="singlepage-content">
           <img src={`../upload/${post.img}`} alt={post.title} />
@@ -66,7 +72,7 @@ const SingleBlogPage = () => {
         </div>
         <Menu cat={post.cat} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
