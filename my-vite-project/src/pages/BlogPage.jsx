@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogMenu from "../components/blogMenu";
 import { motion } from "motion/react";
+import DOMPurify from "dompurify";
 
 export default function BlogPage() {
   const [posts, setPosts] = useState([]);
@@ -44,7 +45,13 @@ export default function BlogPage() {
               >
                 <h1>{post.title}</h1>
               </Link>
-              <p>{post.desc}</p>
+              {/* <p>{post.desc}</p> */}
+              <p
+                className="singlepage-description"
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(post.desc),
+                }}
+              ></p>
               <Link className="link" to={`/post/${post.id}`}>
                 <button>Read More</button>
               </Link>

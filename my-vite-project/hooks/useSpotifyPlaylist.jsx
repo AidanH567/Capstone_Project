@@ -20,7 +20,8 @@ const useSpotifyPlaylist = (playlistId) => {
     setLoading(true);
     try {
       const result = await fetch(
-        `https://api.spotify.com/v1/playlists/5oP9jFmcfNJRMLfIY1sZwV/tracks?offset=${newOffset}&limit=14`,
+        // `https://api.spotify.com/v1/playlists/5oP9jFmcfNJRMLfIY1sZwV/tracks?offset=${newOffset}&limit=14`,
+        `https://api.spotify.com/v1/playlists/5oP9jFmcfNJRMLfIY1sZwV/tracks?offset=0&limit=12`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${accessToken}` },

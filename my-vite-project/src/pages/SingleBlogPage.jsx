@@ -9,6 +9,7 @@ import moment from "moment";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/SingleBlogPage.css";
 import { motion } from "motion/react";
+import DOMPurify from "dompurify";
 
 const SingleBlogPage = () => {
   const [post, setPost] = useState({});
@@ -24,6 +25,8 @@ const SingleBlogPage = () => {
           `http://localhost:8800/api/posts/${postId}`
         );
         setPost(res.data);
+        console.log("Raw HTML:", post.desc);
+        console.log("Sanitized HTML:", DOMPurify.sanitize(post.desc));
       } catch (err) {
         console.log(err);
       }
@@ -68,7 +71,12 @@ const SingleBlogPage = () => {
             )}
           </div>
           <h1 className="singlepage-title">{post.title}</h1>
-          <p className="singlepage-description">{post.desc}</p>
+          <p
+            className="singlepage-description"
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(post.desc),
+            }}
+          ></p>
         </div>
         <Menu cat={post.cat} />
       </div>
