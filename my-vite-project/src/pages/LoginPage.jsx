@@ -121,37 +121,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-// const [username, setUsername] = useState("");
-// const [password, setPassword] = useState("");
-// const [err, setError] = useState(null);
-
-// const { login } = useContext(AuthContext);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       // Change this line to match the backend route
-//       // await axios.post("/api/auth/login", inputs);
-//       await login(inputs);
-//       navigate("/");
-//     } catch (err) {
-//       setError(err.response.data);
-//       console.log(err);
-//     }
-//   };
-
-// const navigate = useNavigate();
-
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   try {
-//     await login({
-//       username: username,
-//       password: password,
-//     }).then(navigate("/"));
-//   } catch (err) {
-//     setError(err.response?.data?.message || "An error occurred");
-//     console.log(err);
-//   }
-// };

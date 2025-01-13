@@ -20,6 +20,7 @@
   height: 60px;
   border-radius: 50%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: end;
 }
 
 .logo img:hover {
@@ -34,7 +35,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 20px; /* Use gap for better spacing between items */
+  gap: 100px; /* Use gap for better spacing between items */
+  margin-left: 15px;
 }
 
 .menu li {

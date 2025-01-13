@@ -29,6 +29,7 @@ export default function BlogPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 2 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }} // Half a second duration
     >
       <BlogMenu />
       <div className="blog-posts">

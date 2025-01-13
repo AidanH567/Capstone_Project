@@ -7,8 +7,9 @@ export default function ContactPage() {
     <motion.div
       className="About"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 2 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <h1
         style={{
@@ -19,7 +20,7 @@ export default function ContactPage() {
           textAlign: "center",
         }}
       >
-        Contact Aidan
+        Contact
       </h1>
       <Contact />
     </motion.div>

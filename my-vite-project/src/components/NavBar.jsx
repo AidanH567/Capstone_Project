@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import { AuthContext } from "../context/AuthContext";
-import Logo from "../img/Logo.webp";
+import Logo from "../img/Logo_1.webp";
 import Login from "../img/Login.jpg";
 import Register from "../img/Register.jpg";
 import Write from "../img/Write.webp";
@@ -13,9 +13,20 @@ export default function NavBar() {
 
   return (
     <nav className="NavBar">
-      <div className="logo">
+      <div
+        className="logo"
+        style={{
+          marginRight: "20px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <Link to="/">
-          <img src={Logo} alt="" />
+          <img
+            src={Logo}
+            alt=""
+            style={{ width: "60px", borderRadius: "50%" }}
+          />
         </Link>
       </div>
       <ul className="menu">

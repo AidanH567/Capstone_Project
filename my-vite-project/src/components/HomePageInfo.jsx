@@ -7,8 +7,9 @@ export default function HomePageInfo() {
     <motion.div
       className="homepageinfo-container"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 4 }}
+      animate={{ opacity: 2 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="homepageinfo-description">
         <p>

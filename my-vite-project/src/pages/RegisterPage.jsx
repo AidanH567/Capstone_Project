@@ -64,38 +64,3 @@ export default function RegisterPage() {
     </div>
   );
 }
-
-// const [username, setUsername] = useState("");
-// const [email, setEmail] = useState("");
-// const [password, setPassword] = useState("");
-// const [inputs, setInputs] = useState({});
-
-// const handleChange = (e) => {
-//   console.log(inputs);
-//   setInputs({
-//     username: username,
-//     email: email,
-//     password: password,
-//   });
-// };
-
-// console.log(inputs);
-
-// const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   try {
-//     // Change this line to match the backend route
-//     await axios
-//       .post("http://localhost:8800/api/auth/register", {
-//         username: username,
-//         email: email,
-//         password: password,
-//       })
-//       .then((response) => console.log(response.data.data));
-
-//     navigate("/login");
-//   } catch (err) {
-//     setError(err);
-//     console.log(err);
-//   }
-// };

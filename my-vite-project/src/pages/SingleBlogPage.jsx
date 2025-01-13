@@ -51,6 +51,7 @@ const SingleBlogPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 2 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="singlepage-main">
         <div className="singlepage-content">
