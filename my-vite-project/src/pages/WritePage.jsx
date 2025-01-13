@@ -140,7 +140,7 @@ export default function WritePage() {
               id="questions"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="questions">Technology</label>
+            <label htmlFor="questions">Questions</label>
           </div>
           <div className="write-cat">
             <input
