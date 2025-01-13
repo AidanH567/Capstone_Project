@@ -9,8 +9,8 @@
 
 /* Video container with iframe */
 .video-container {
-  width: 50%;
-  height: 50%; /* Increased height of the video */
+  width: 49%;
+  height: 49%; /* Increased height of the video */
   margin-right: 20px;
   position: relative; /* Required for positioning the hover effect */
 }

@@ -7,7 +7,7 @@ function AboutPageLayout() {
       </div>
       <div className="about-page-container">
         <div className="about-page-img">
-          <img src="/images/Self_Image.jpg" alt="" />
+          <img src="/images/Self_Image.jpg" alt="" style={{ height: "100%" }} />
         </div>
         <div className="about-page-info">
           <p>

@@ -1,21 +1,23 @@
 .about-page-layout {
   width: 100%;
-  height: 2000px;
+  height: 100%;
 }
 .about-page-container {
-  height: 100%;
+  height: 1200px;
   display: flex;
   margin: 20% 20%;
   margin-top: 10px;
 }
 .about-page-container img {
-  height: 80%;
+  height: 100%;
   width: 500px;
 }
 .about-page-img {
   display: flex;
   justify-content: center;
   width: 50%;
+  height: 1433px;
+  margin-top: 20px;
 }
 .about-page-info {
   width: 50%;

@@ -20,7 +20,7 @@ const ListeningPage = () => {
           alignItems: "center", // Center content vertically
         }}
       >
-        <h1>Listen to my favourite songs</h1>
+        <h1 style={{ fontSize: "2.5rem" }}>Listen to my favourite songs</h1>
       </div>
       {/* Pass the fetched songs to the SpotifyPlaylist component */}
       <SpotifyPlaylist songs={songs} />

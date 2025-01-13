@@ -18,6 +18,7 @@ export default function ContactPage() {
           alignItems: "flex-start",
           margin: "50px",
           textAlign: "center",
+          fontSize: "2.5rem",
         }}
       >
         Contact

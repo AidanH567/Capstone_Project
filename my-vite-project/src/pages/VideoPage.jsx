@@ -13,7 +13,7 @@ export default function VideoPage() {
           marginTop: "50px",
         }}
       >
-        <h1>Watch Me Play</h1>
+        <h1 style={{ fontSize: "2.5rem" }}>Watch Me Play</h1>
       </div>
       <VideoLeft />
     </div>
