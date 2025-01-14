@@ -12,15 +12,12 @@ export default function HomeImage() {
     >
       <img
         className="homeimage-image"
-        src="/images/Self_Image.jpg"
+        src="/images/Main1.JPG"
         alt="Background"
       />
       <div className="homeimage-text-div">
         <h1 className="homeimage-h1">Aidan Herstik</h1>
-        <p>
-          Palawa Artist Kaytlyn Johnson breaks onto the scene with her debut
-          single.
-        </p>
+        <p>Listen to Aidan Herstik Now</p>
         <a
           className="homeimage-button"
           href="https://open.spotify.com/artist/your-spotify-id"

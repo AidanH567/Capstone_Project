@@ -1,9 +1,9 @@
 .homeimage-container {
   width: 100%;
-  height: 600px; /* Set height for the container */
-  position: relative; /* Enables absolute positioning for children */
+  height: 750px; /* Set height for the container */
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   text-align: center;
 }
@@ -33,7 +33,8 @@
   display: flex;
   gap: 20px;
   flex-direction: column;
-  margin-bottom: 100px;
+  margin-bottom: 275px;
+  margin-right: 300px;
 }
 .homeimage-button {
   color: white; /* White text */

@@ -23,6 +23,7 @@
   width: 45%;
   max-width: 100%; /* Ensures responsiveness */
   margin-left: 20px;
+  margin-top: 125px;
 }
 
 .info-text-container-1 {
@@ -53,6 +54,7 @@
   width: 45%;
   max-width: 100%; /* Ensures responsiveness */
   margin-right: 8px;
+  margin-top: 175px;
 }
 
 .info-text-container-2 {

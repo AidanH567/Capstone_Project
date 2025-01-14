@@ -24,7 +24,7 @@ export default function HomePageInfo() {
 
       {/* First container (image left, text right) */}
       <div className="info-container-1">
-        <img src="/images/Self_Image.jpg" alt="" />
+        <img src="/images/Small_1.jpeg" alt="" />
         <div className="info-text-container-1">
           <p>
             Aidan Herstik is an accomplished guitarist with years of experience
@@ -86,10 +86,14 @@ export default function HomePageInfo() {
             <button>Watch Me play</button>
           </Link>
         </div>
-        <img src="/images/Self_Image.jpg" alt="" />
+        <img src="/images/Small_3.JPG" alt="" />
       </div>
       <div className="info-container-1">
-        <img src="/images/Self_Image.jpg" alt="" />
+        <img
+          src="/images/Small_2.JPG"
+          alt=""
+          // style={{ marginBottom: "50px" }}
+        />
         <div className="info-text-container-1">
           <h1>Request a show or Book Lesson</h1>
           <p>

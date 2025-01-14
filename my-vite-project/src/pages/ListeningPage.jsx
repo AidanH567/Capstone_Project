@@ -3,13 +3,13 @@ import useSpotifyPlaylist from "../../hooks/useSpotifyPlaylist"; // Import the p
 import SpotifyPlaylist from "../components/SpotifyPlaylist"; // Import the SpotifyPlaylist component
 
 const ListeningPage = () => {
-  const playlistId = "37i9dQZF1DWWQRwui0ExPn"; // Replace with your actual playlist ID
+  const playlistId = "5oP9jFmcfNJRMLfIY1sZwV"; // Replace with your actual playlist ID
 
   // Use the playlist hook to get the songs, loading, and error state
-  const { songs, loading, error } = useSpotifyPlaylist(playlistId);
+  // const { songs, loading, error } = useSpotifyPlaylist(playlistId);
 
-  if (loading) return <div>Loading playlist...</div>;
-  if (error) return <div>{`Error: ${error}`}</div>;
+  // if (loading) return <div>Loading playlist...</div>;
+  // if (error) return <div>{`Error: ${error}`}</div>;
 
   return (
     <div>
@@ -23,7 +23,8 @@ const ListeningPage = () => {
         <h1 style={{ fontSize: "2.5rem" }}>Listen to my favourite songs</h1>
       </div>
       {/* Pass the fetched songs to the SpotifyPlaylist component */}
-      <SpotifyPlaylist songs={songs} />
+      {/* <SpotifyPlaylist songs={songs} /> */}
+      <SpotifyPlaylist />
     </div>
   );
 };

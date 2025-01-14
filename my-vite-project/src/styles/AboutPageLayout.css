@@ -5,12 +5,14 @@
 .about-page-container {
   height: 1200px;
   display: flex;
+  flex-direction: row;
   margin: 20% 20%;
   margin-top: 10px;
 }
 .about-page-container img {
   height: 100%;
-  width: 500px;
+  width: 700px;
+  margin-right: 120px;
 }
 .about-page-img {
   display: flex;

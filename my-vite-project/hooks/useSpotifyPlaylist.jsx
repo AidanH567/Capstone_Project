@@ -5,8 +5,9 @@ const useSpotifyPlaylist = (playlistId) => {
   const [songs, setSongs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [offset, setOffset] = useState(0); // Track the offset for pagination
+  const [offset, setOffset] = useState(0);
 
+  console.log(playlistId);
   const {
     accessToken,
     loading: authLoading,
@@ -14,13 +15,14 @@ const useSpotifyPlaylist = (playlistId) => {
   } = useSpotifyAuth();
 
   const fetchPlaylistTracks = async (newOffset = 0) => {
-    if (!accessToken) return;
-    const playlistid = "5oP9jFmcfNJRMLfIY1sZwV";
+    if (!accessToken || !playlistId) return;
+    // const playlistid = "5oP9jFmcfNJRMLfIY1sZwV";
+    // const playlistid = "2MaRfSW2aLwAqYdymIX82y";
 
     setLoading(true);
     try {
       const result = await fetch(
-        `https://api.spotify.com/v1/playlists/${playlistid}/tracks?offset=${newOffset}&limit=12`,
+        `https://api.spotify.com/v1/playlists/${playlistId}/tracks?offset=${newOffset}&limit=12`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${accessToken}` },
@@ -40,6 +42,11 @@ const useSpotifyPlaylist = (playlistId) => {
       setLoading(false);
     }
   };
+  // Reset offset when playlist changes
+  useEffect(() => {
+    setOffset(0);
+    setSongs([]);
+  }, [playlistId]);
 
   // Fetch songs whenever the offset changes
   useEffect(() => {
@@ -52,7 +59,7 @@ const useSpotifyPlaylist = (playlistId) => {
     songs,
     loading,
     error,
-    fetchNext: () => setOffset((prevOffset) => prevOffset + 14),
+    fetchNext: () => setOffset((prevOffset) => prevOffset + 12),
   };
 };
 

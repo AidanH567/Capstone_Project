@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import useSpotifyPlaylist from "../../hooks/useSpotifyPlaylist";
 import "../styles/SpotifyPlaylist.css";
 
 const SpotifyPlaylist = ({ playlistId }) => {
-  const { songs, loading, error, fetchNext } = useSpotifyPlaylist(playlistId);
+  const [selectedPlaylistId, setSelectedPlaylistId] = useState(
+    "5oP9jFmcfNJRMLfIY1sZwV"
+  );
+  const { songs, loading, error, fetchNext } =
+    useSpotifyPlaylist(selectedPlaylistId);
   console.log(songs);
+
+  const playlists = [
+    {
+      id: "2MaRfSW2aLwAqYdymIX82y",
+      name: "Playlist 1",
+    },
+    {
+      id: "2Bs31HHeuEIHb616kLTAVb",
+      name: "Playlist 2",
+    },
+    {
+      id: "5oP9jFmcfNJRMLfIY1sZwV",
+      name: "Playlist 3",
+    },
+    {
+      id: "15CmdU0K2hmU1g3vbUbqDm",
+      name: "Playlist 4",
+    },
+  ];
 
   if (error) {
     return <p>{error}</p>;
@@ -12,6 +35,17 @@ const SpotifyPlaylist = ({ playlistId }) => {
 
   return (
     <div className="section-list">
+      {playlists.map((playlist) => (
+        <button
+          key={playlist.id}
+          onClick={() => setSelectedPlaylistId(playlist.id)}
+          className={`playlist-button ${
+            selectedPlaylistId === playlist.id ? "selected" : ""
+          }`}
+        >
+          {playlist.name}
+        </button>
+      ))}
       <ol className="Card-Ordered-list">
         {songs.map(({ id, album, name, uri, artists, href }) => (
           <div className="card" key={id}>
