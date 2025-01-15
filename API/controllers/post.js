@@ -1,7 +1,9 @@
 import { db } from "../db.js";
 import jwt from "jsonwebtoken";
 
+// Fetch all posts or filter by category
 export const getPosts = (req, res) => {
+  // SQL query to fetch posts. If a category is provided in the query string, filter by it.
   const q = req.query.cat
     ? "SELECT * FROM posts WHERE cat=?"
     : "SELECT * FROM posts";
@@ -12,7 +14,10 @@ export const getPosts = (req, res) => {
     return res.status(200).json(data);
   });
 };
+
+// Fetch a single post by ID
 export const getPost = (req, res) => {
+  // SQL query to join the `posts` and `users` tables, fetching post and author details
   const q =
     "SELECT p.id, `username`, `title`, `desc`, p.img, u.img AS userImg, `cat`,`date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = ? ";
 
@@ -24,12 +29,15 @@ export const getPost = (req, res) => {
 };
 
 export const addPost = (req, res) => {
+  // Check if the JWT token is present in the cookies (you need to be logged in)
   const token = req.cookies.access_token;
   if (!token) return res.status(401).json("Not authenticated!");
 
+  // Verify the token to ensure it's valid
   jwt.verify(token, "jwtkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
+    // SQL query to insert a new post into the database
     const q =
       "INSERT INTO posts(`title`, `desc`, `img`, `cat`, `date`,`uid`) VALUES (?)";
 
@@ -50,11 +58,14 @@ export const addPost = (req, res) => {
 };
 
 export const deletePost = (req, res) => {
+  // Check if the JWT token is present in the cookies
   const token = req.cookies.access_token;
   console.log("Recive Token", token);
 
+  //If no token, deny access
   if (!token) return res.status(401).json("Not Authenticated");
 
+  // Verify the token to ensure it's valid
   jwt.verify(token, "jwtkey", (err, userInfo) => {
     if (err) {
       console.error("Token verification error:", err);
@@ -62,6 +73,7 @@ export const deletePost = (req, res) => {
     }
 
     const postId = req.params.id;
+    // SQL query to delete the post if it belongs to the authenticated user
     const q = "DELETE FROM posts WHERE `id` = ? AND `uid` = ?";
 
     db.query(q, [postId, userInfo.id], (err, data) => {

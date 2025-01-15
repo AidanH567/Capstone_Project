@@ -14,6 +14,7 @@ export const register = (req, res) => {
     const salt = bcryptjs.genSaltSync(10); // Use bcryptjs
     const hash = bcryptjs.hashSync(req.body.password, salt);
 
+    //SQL INSERT statement adds the new user's username, email, and hashed password
     const q = "INSERT INTO users(`username`, `email`, `password`) VALUES (?)";
     const values = [req.body.username, req.body.email, hash];
 
@@ -25,6 +26,7 @@ export const register = (req, res) => {
 };
 
 export const login = (req, res) => {
+  //checks if the provided username exists in the database
   const q = "SELECT * FROM users WHERE username = ?";
 
   db.query(q, [req.body.username], (err, data) => {
@@ -39,16 +41,17 @@ export const login = (req, res) => {
 
     if (!isPasswordCorrect)
       return res.status(400).json("Wrong username or password!");
-
+    //create JWT token is created using the user's ID as the payload
     const token = jwt.sign({ id: data[0].id }, "jwtkey");
     const { password, ...other } = data[0];
 
     res
+      //generated token is sent back to the client in a cookie
       .cookie("access_token", token, {
         httpOnly: true,
         secure: true,
-        // secure: process.env.NODE_ENV === "production", // Ensures secure cookie in production
-        sameSite: "None", // Required for cross-origin cookies
+
+        sameSite: "None",
         path: "/",
       })
       .status(200)
@@ -57,12 +60,14 @@ export const login = (req, res) => {
 };
 export const logout = (req, res) => {
   res
+    //Removes the access_token cookie
     .clearCookie("access_token", {
       httpOnly: true,
       sameSite: "none",
       secure: true,
       path: "/",
     })
+    //200 response confirming the user has been logged out
     .status(200)
     .json("User Has Been Logged out");
 };

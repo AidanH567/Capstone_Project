@@ -102,3 +102,47 @@
   height: 80px;
   border: none;
 }
+/* Button container with gap */
+.button-container {
+  display: flex;
+  gap: 50px; /* Adjust this value to your liking for spacing */
+  margin-bottom: 20px; /* Optional: Adds space below the buttons */
+  flex-wrap: wrap; /* Allows buttons to wrap to the next line if needed */
+}
+
+/* Playlist button styling */
+.playlist-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+}
+
+/* Hover effect */
+.playlist-button:hover {
+  background-color: #e0e0e0;
+  border-color: #888;
+  color: #000;
+}
+
+/* Selected button styling */
+.playlist-button.selected {
+  background-color: #e05a49;
+  color: white;
+  border-color: #e05a49;
+}
+
+/* Focus styling */
+.playlist-button:focus {
+  border-color: #e05a49;
+  box-shadow: 0 0 5px rgba(235, 64, 2, 0.5);
+}

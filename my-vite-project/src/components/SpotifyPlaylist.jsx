@@ -8,25 +8,12 @@ const SpotifyPlaylist = ({ playlistId }) => {
   );
   const { songs, loading, error, fetchNext } =
     useSpotifyPlaylist(selectedPlaylistId);
-  console.log(songs);
 
   const playlists = [
-    {
-      id: "2MaRfSW2aLwAqYdymIX82y",
-      name: "Playlist 1",
-    },
-    {
-      id: "2Bs31HHeuEIHb616kLTAVb",
-      name: "Playlist 2",
-    },
-    {
-      id: "5oP9jFmcfNJRMLfIY1sZwV",
-      name: "Playlist 3",
-    },
-    {
-      id: "15CmdU0K2hmU1g3vbUbqDm",
-      name: "Playlist 4",
-    },
+    { id: "2MaRfSW2aLwAqYdymIX82y", name: "Jazz" },
+    { id: "2Bs31HHeuEIHb616kLTAVb", name: "Fusion" },
+    { id: "5oP9jFmcfNJRMLfIY1sZwV", name: "Alternitive" },
+    { id: "15CmdU0K2hmU1g3vbUbqDm", name: "Rock" },
   ];
 
   if (error) {
@@ -35,24 +22,26 @@ const SpotifyPlaylist = ({ playlistId }) => {
 
   return (
     <div className="section-list">
-      {playlists.map((playlist) => (
-        <button
-          key={playlist.id}
-          onClick={() => setSelectedPlaylistId(playlist.id)}
-          className={`playlist-button ${
-            selectedPlaylistId === playlist.id ? "selected" : ""
-          }`}
-        >
-          {playlist.name}
-        </button>
-      ))}
+      <div className="button-container">
+        {playlists.map((playlist) => (
+          <button
+            key={playlist.id}
+            onClick={() => setSelectedPlaylistId(playlist.id)}
+            className={`playlist-button ${
+              selectedPlaylistId === playlist.id ? "selected" : ""
+            }`}
+          >
+            {playlist.name}
+          </button>
+        ))}
+      </div>
+
       <ol className="Card-Ordered-list">
         {songs.map(({ id, album, name, uri, artists, href }) => (
           <div className="card" key={id}>
             <img src={album.images[0].url} alt={name} className="card-image" />
             <div className="card-content">
               <h3 className="card-title">
-                {/* Embed Spotify Player */}
                 <iframe
                   src={`https://open.spotify.com/embed/track/${id}`}
                   style={{ maxWidth: "300px", width: "100%" }}
@@ -75,7 +64,9 @@ const SpotifyPlaylist = ({ playlistId }) => {
           </div>
         ))}
       </ol>
+
       {loading && <p>Loading...</p>}
+
       {!loading && (
         <button onClick={fetchNext} className="load-more-button">
           Next Songs

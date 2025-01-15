@@ -20,7 +20,7 @@ export default function HomeImage() {
         <p>Listen to Aidan Herstik Now</p>
         <a
           className="homeimage-button"
-          href="https://open.spotify.com/artist/your-spotify-id"
+          href="https://open.spotify.com/artist/6p2HnfM955TI1bX34dkLnI"
           target="_blank"
           rel="noopener noreferrer"
         >

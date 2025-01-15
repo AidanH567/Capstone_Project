@@ -16,8 +16,6 @@ const useSpotifyPlaylist = (playlistId) => {
 
   const fetchPlaylistTracks = async (newOffset = 0) => {
     if (!accessToken || !playlistId) return;
-    // const playlistid = "5oP9jFmcfNJRMLfIY1sZwV";
-    // const playlistid = "2MaRfSW2aLwAqYdymIX82y";
 
     setLoading(true);
     try {
