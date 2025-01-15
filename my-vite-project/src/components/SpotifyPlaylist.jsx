@@ -3,9 +3,12 @@ import useSpotifyPlaylist from "../../hooks/useSpotifyPlaylist";
 import "../styles/SpotifyPlaylist.css";
 
 const SpotifyPlaylist = ({ playlistId }) => {
+  // State to track the currently selected playlist ID
   const [selectedPlaylistId, setSelectedPlaylistId] = useState(
     "5oP9jFmcfNJRMLfIY1sZwV"
   );
+
+  // Calling the custom hook to fetch songs for the selected playlist
   const { songs, loading, error, fetchNext } =
     useSpotifyPlaylist(selectedPlaylistId);
 
