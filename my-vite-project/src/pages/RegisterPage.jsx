@@ -36,8 +36,6 @@ export default function RegisterPage() {
           placeholder="username"
           name="username"
           onChange={handleChange}
-
-          // onChange={(e) => setUsername(e.target.value)}
         />
         <input
           required
@@ -45,7 +43,6 @@ export default function RegisterPage() {
           placeholder="email"
           name="email"
           onChange={handleChange}
-          // onChange={(e) => setEmail(e.target.value)}
         />
         <input
           required
@@ -53,7 +50,6 @@ export default function RegisterPage() {
           placeholder="password"
           name="password"
           onChange={handleChange}
-          // onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleSubmit}>Register</button>
         {err && <p style={{ color: "red" }}>{err}</p>}

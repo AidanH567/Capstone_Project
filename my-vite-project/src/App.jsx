@@ -17,15 +17,11 @@ function App() {
 
   return (
     <>
-      <SongHolder>
-        <AccessTokenHolder>
-          <AuthContextProvider>
-            <NavBar />
-            <AppRoutes />
-            <Footer />
-          </AuthContextProvider>
-        </AccessTokenHolder>
-      </SongHolder>
+      <AuthContextProvider>
+        <NavBar />
+        <AppRoutes />
+        <Footer />
+      </AuthContextProvider>
     </>
   );
 }
