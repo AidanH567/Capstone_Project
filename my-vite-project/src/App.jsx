@@ -4,11 +4,7 @@ import NavBar from "./components/NavBar";
 import AppRoutes from "./routes/AppRoutes";
 import Footer from "./components/Footer";
 import { AuthContext, AuthContextProvider } from "./context/AuthContext";
-import { SongHolder } from "./context/SongsContext";
-import {
-  AccessTokenContext,
-  AccessTokenHolder,
-} from "./context/AccessTokenContext";
+
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import Login from "./components/Login";
 

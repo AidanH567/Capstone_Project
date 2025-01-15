@@ -1,21 +1,22 @@
 import axios from "axios";
 import "../styles/WritePage.css";
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill from "react-quill"; // Rich text editor for formatting post content.
 import "react-quill/dist/quill.snow.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
 
 export default function WritePage() {
   const state = useLocation().state;
-  const [value, setValue] = useState(state?.title || "");
-  const [title, setTitle] = useState(state?.desc || "");
-  const [file, setFile] = useState(null);
-  const [cat, setCat] = useState(state?.cat || "");
-  // Save in pages/AboutPage.jsx
+  const [value, setValue] = useState(state?.title || ""); // Tracks the main post content (rich text).
+  const [title, setTitle] = useState(state?.desc || ""); // Manages the title input field.
+  const [file, setFile] = useState(null); // Holds the file to upload (image).
+  const [cat, setCat] = useState(state?.cat || ""); // Tracks the selected category.
+
   const navigate = useNavigate();
 
   const upload = async () => {
+    // Handles image upload to the server using a FormData object.
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -31,8 +32,11 @@ export default function WritePage() {
   };
 
   const handleClick = async (e) => {
+    // Manages post submission, either creating a new one or updating an existing post
     e.preventDefault();
-    const imgUrl = await upload();
+
+    const imgUrl = await upload(); // Uploads the image and retrieves its URL.
+
     console.log(
       "Formatted Date: ",
       moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")

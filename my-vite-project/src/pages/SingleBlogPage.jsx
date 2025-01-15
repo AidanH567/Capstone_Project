@@ -12,12 +12,21 @@ import { motion } from "motion/react";
 import DOMPurify from "dompurify";
 
 const SingleBlogPage = () => {
+  // State to store the post data
   const [post, setPost] = useState({});
+
+  // Access location and navigate hooks
+  // Access location and navigate hooks
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Get the post ID from the URL path
   const postId = location.pathname.split("/")[2];
+
+  // Access the current user from context
   const { currentUser } = useContext(AuthContext);
 
+  // Fetch the post data on component mount or when postId changes
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,8 +41,9 @@ const SingleBlogPage = () => {
       }
     };
     fetchData();
-  }, [postId]);
+  }, [postId]); // Dependency array ensures effect runs when postId changes
 
+  // Function to handle post deletion
   const handleDelete = async () => {
     try {
       await axios.delete(`http://localhost:8800/api/posts/${postId}`, {
@@ -60,8 +70,11 @@ const SingleBlogPage = () => {
             {post.userImg && <img src={post.userImg} alt="User Avatar" />}
             <div className="singlepage-info">
               <span>{post.username}</span>
-              <p>Posted {moment(post.date).fromNow()}</p>
+              <p>Posted {moment(post.date).fromNow()}</p>{" "}
+              {/* Display post date relative to current time */}
             </div>
+
+            {/* Conditionally render edit and delete buttons if the current user is the post author */}
             {currentUser?.username === post.username && (
               <div className="singlepage-edit">
                 <Link to={`/write?edit=2`}>

@@ -4,18 +4,22 @@ import axios from "axios";
 
 export default function RegisterPage() {
   const [inputs, setInputs] = useState({
+    // State to manage user inputs (username, email, password).
     username: "",
     email: "",
     password: "",
   });
 
+  // Updates input state dynamically based on user input
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  // Handles form submission to register a new user.
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Sends registration details to the backend.
       await axios.post("http://localhost:8800/api/auth/register", inputs);
       navigate("/login");
     } catch (err) {
@@ -23,7 +27,10 @@ export default function RegisterPage() {
     }
   };
 
+  // React Router's navigation hook for redirecting users.
   const navigate = useNavigate();
+
+  // State for handling error messages.
   const [err, setError] = useState(null);
 
   return (
