@@ -2,9 +2,9 @@ import axios from "axios";
 import "../styles/WritePage.css";
 import React, { useState } from "react";
 import ReactQuill from "react-quill"; // Rich text editor for formatting post content.
-import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.snow.css"; // Styles for ReactQuill editor
 import { useLocation, useNavigate } from "react-router-dom";
-import moment from "moment";
+import moment from "moment"; // For formatting dates
 
 export default function WritePage() {
   const state = useLocation().state;
@@ -16,7 +16,6 @@ export default function WritePage() {
   const navigate = useNavigate();
 
   const upload = async () => {
-    // Handles image upload to the server using a FormData object.
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -32,10 +31,9 @@ export default function WritePage() {
   };
 
   const handleClick = async (e) => {
-    // Manages post submission, either creating a new one or updating an existing post
     e.preventDefault();
 
-    const imgUrl = await upload(); // Uploads the image and retrieves its URL.
+    const imgUrl = await upload();
 
     console.log(
       "Formatted Date: ",
@@ -51,7 +49,7 @@ export default function WritePage() {
             img: file ? imgUrl : "",
           })
         : await axios.post(
-            `http://localhost:8800/api/posts`,
+            "http://localhost:8800/api/posts",
             {
               title,
               desc: value,
@@ -89,11 +87,11 @@ export default function WritePage() {
       <div className="write-menu">
         <div className="write-item">
           <h1>Publish</h1>
-          <span>
+          <span className="status">
             <b>Status: </b> Draft
           </span>
-          <span>
-            <b>Visablility: </b> Public
+          <span className="visibility">
+            <b>Visibility: </b> Public
           </span>
           <input
             style={{ display: "none" }}
@@ -177,7 +175,7 @@ export default function WritePage() {
               id="history"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="history">Histroy</label>
+            <label htmlFor="history">History</label>
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
 .add {
   margin-top: 20px;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  padding: 20px;
 }
 
 .add .write-content {
@@ -9,76 +10,106 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-right: 20px;
 }
 
 .write-content input {
-  padding: 10px;
-  border: 1px solid lightgrey;
-  width: 20%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.write-editor-container {
+  height: 350px;
+  overflow: auto;
+}
+
+.write-editor {
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .add .write-menu {
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.write-editor-container {
-  height: 300px;
-  overflow: scroll;
-}
-
-.write-editor {
-  height: 100%;
-  border: none;
+  gap: 30px;
 }
 
 .write-item {
-  padding: 10px;
-  border: 1px solid lightgrey;
-  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  font-size: 12px;
-  color: white;
+  gap: 15px;
+  font-size: 14px;
+  background-color: #f9f9f9;
 }
 
 .write-item h1 {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
 }
 
 .write-file {
   text-decoration: underline;
   cursor: pointer;
+  color: #007bff;
 }
 
 .write-buttons button {
-  display: flex;
-  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
 
 .write-buttons .write-button-1 {
   background-color: #6c757d;
-  cursor: pointer;
-  color: rgb(239, 106, 106);
-  background-color: black;
-  border: 1px solid rgb(239, 106, 106);
-  padding: 3px 5px;
+  color: white;
+  border: 1px solid #6c757d;
+  transition: background-color 0.3s ease;
+}
+
+.write-buttons .write-button-1:hover {
+  background-color: #5a6268;
 }
 
 .write-buttons .write-button-2 {
-  background-color: #6c757d;
-  cursor: pointer;
-  color: black;
-  background-color: rgb(239, 106, 106);
-  border: 1px solid black;
-  padding: 3px 5px;
+  background-color: #f03e3e;
+  color: white;
+  border: 1px solid #f03e3e;
+  transition: background-color 0.3s ease;
 }
+
+.write-buttons .write-button-2:hover {
+  background-color: #c92a2a;
+}
+
 .write-cat {
   display: flex;
   align-items: center;
-  gap: 2px;
-  color: rgb(231, 94, 94);
+  gap: 10px;
+  color: #007bff;
+}
+
+.write-cat input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.write-menu h1 {
+  font-size: 18px;
+  color: #555;
+}
+.write-item span {
+  color: black; /* Change text color to black */
 }
