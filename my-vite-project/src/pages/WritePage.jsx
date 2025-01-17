@@ -112,7 +112,7 @@ export default function WritePage() {
           </div>
         </div>
         <div className="write-item">
-          <h1>Catagory</h1>
+          <h1>Category</h1>
           <div className="write-cat">
             <input
               type="radio"

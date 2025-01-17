@@ -37,6 +37,7 @@ const useSpotifyPlaylist = (playlistId) => {
       }
 
       const data = await result.json();
+      console.log(data);
       const newSongs = data.items.map((item) => item.track); // Extract track information
 
       // Update the state with the new list of songs
